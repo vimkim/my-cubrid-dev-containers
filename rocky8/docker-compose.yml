@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  vimkim-rocky-container-1:
+    image: vimkim-rocky-image-2
+    container_name: vimkim-rocky-container-2
+    network_mode: "host"
+    privileged: true
+    volumes:
+      - ./workspace:/home/vimkim/workspace
+    stdin_open: true # Equivalent to -it
+    tty: true        # Equivalent to -it
+    command: /bin/bash
+

@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  dev-environment:
+    build:
+      context: .
+    container_name: vimkim-arch-container-1
+    privileged: true
+    network_mode: "host"
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./workspace:/home/vimkim/workspace
+    command: ["/bin/bash"]
+

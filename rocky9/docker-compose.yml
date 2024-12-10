@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  dev_env:
+    build:
+      context: rocky9-dockerfile
+      dockerfile: Dockerfile
+    container_name: vimkim-rocky9-container
+    network_mode: "host"  # Use host networking
+    privileged: true      # Optional: Enables access to host devices
+    volumes:
+      - ./workspace:/home/vimkim/workspace  # Mount the working directory
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+
