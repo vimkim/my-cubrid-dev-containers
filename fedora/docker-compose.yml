@@ -1,0 +1,20 @@
+services:
+  vk-fedora-service-1:
+    build: .
+    container_name: vk-fedora-container-1
+    hostname: iusefedorabtw
+    volumes:
+      - ./workspace:/home/vimkim/workspace
+      - vk-fedora-home-1:/home/vimkim
+    privileged: true
+    networks:
+      dev-net:
+        ipv4_address: 192.168.2.120
+
+networks:
+  dev-net:
+    name: dev-net
+    external: true
+
+volumes:
+  vk-fedora-home-1:
