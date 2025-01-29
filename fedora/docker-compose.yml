@@ -6,6 +6,8 @@ services:
     volumes:
       - ./workspace:/home/vimkim/workspace
       - vk-fedora-home-1:/home/vimkim
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
     privileged: true
     networks:
       dev-net:
@@ -16,6 +18,8 @@ services:
     hostname: iusefedorabtw
     volumes:
       - vk-fedora-home-2:/home/vimkim
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
     privileged: true
     networks:
       dev-net:
