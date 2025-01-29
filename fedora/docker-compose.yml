@@ -10,6 +10,16 @@ services:
     networks:
       dev-net:
         ipv4_address: 192.168.2.120
+  vk-fedora-service-2:
+    build: .
+    container_name: vk-fedora-container-2
+    hostname: iusefedorabtw
+    volumes:
+      - vk-fedora-home-2:/home/vimkim
+    privileged: true
+    networks:
+      dev-net:
+        ipv4_address: 192.168.2.121
 
 networks:
   dev-net:
@@ -18,3 +28,4 @@ networks:
 
 volumes:
   vk-fedora-home-1:
+  vk-fedora-home-2:
