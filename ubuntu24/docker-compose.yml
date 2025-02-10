@@ -1,0 +1,21 @@
+services:
+  vk-ubuntu24-service-1:
+    build: .
+    container_name: vk-ubuntu24-container-1
+    hostname: iusefedorabtw
+    volumes:
+      - ./workspace:/home/vimkim/workspace
+      - vk-ubuntu24-home-1:/home/vimkim
+    privileged: true
+    networks:
+      dev-net:
+        ipv4_address: 192.168.2.122
+    stdin_open: true
+    tty: true
+networks:
+  dev-net:
+    name: dev-net
+    external: true
+
+volumes:
+  vk-ubuntu24-home-1:
