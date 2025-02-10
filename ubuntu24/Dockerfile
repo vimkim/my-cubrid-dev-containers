@@ -11,7 +11,14 @@ RUN apt install -y \
     vim \
     git \
     gcc \
-    make
+    make \
+    g++
+
+RUN apt install -y cmake ninja-build make
+RUN apt install -y openjdk-8-jdk # 11 also works.
+RUN apt install -y flex
+RUN apt install -y bison # better 3.0.5
+RUN apt install -y ncurses-dev systemtap-sdt-dev libelf-dev build-essential
 
 # Create user with sudo access
 RUN useradd -m -s /bin/bash vimkim && \

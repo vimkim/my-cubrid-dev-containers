@@ -2,7 +2,7 @@ services:
   vk-ubuntu24-service-1:
     build: .
     container_name: vk-ubuntu24-container-1
-    hostname: iusefedorabtw
+    hostname: iuseubuntubtw
     volumes:
       - ./workspace:/home/vimkim/workspace
       - vk-ubuntu24-home-1:/home/vimkim
