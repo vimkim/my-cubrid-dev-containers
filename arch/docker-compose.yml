@@ -1,14 +1,26 @@
 version: '3.9'
 services:
-  dev-environment:
-    build:
-      context: .
-    container_name: vimkim-arch-container-1
+  vk-arch-service-1:
+    build: .
+    container_name: vk-arch-container-1
+    hostname: iusearchbtw
     privileged: true
-    network_mode: "host"
     tty: true
     stdin_open: true
     volumes:
-      - ./workspace:/home/vimkim/workspace
-    command: ["/bin/bash"]
+      - vk-arch-home-1:/home/vimkim
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    networks:
+      dev-net:
+      ipv4_address: 192.168.4.2
+
+networks:
+  vimkim-net:
+    name: dev-net
+    external: true
+
+volumes:
+  vk-arch-home-1:
+
 
